@@ -1,0 +1,45 @@
+name: Environment Variables Lab
+
+on:
+
+  push:
+
+jobs:
+
+  hello:
+
+    runs-on: ubuntu-latest
+
+    env:
+
+      NAME: Atanu
+
+      CITY: Kolkata
+
+      COURSE: GitHub Actions
+
+    steps:
+
+    - uses: actions/checkout@v4
+
+    - name: Show Name
+
+      run: echo $NAME
+
+    - name: Show City
+
+      run: echo $CITY
+
+    - name: Show Course
+
+      run: echo $COURSE
+
+    - name: Show All
+
+      run: |
+
+        echo "Name = $NAME"
+
+        echo "City = $CITY"
+
+        echo "Course = $COURSE"
