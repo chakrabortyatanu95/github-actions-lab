@@ -1,0 +1,41 @@
+name: Docker CI
+
+on:
+
+  push:
+
+jobs:
+
+  docker:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - uses: actions/checkout@v7
+
+
+    - name: Check Docker Version
+
+      run: docker --version
+
+
+    - name: Build Docker Image
+
+      run: |
+
+        docker build -t myapp .
+
+
+    - name: List Images
+
+      run: |
+
+        docker images
+
+
+    - name: Run Container
+
+      run: |
+
+        docker run myapp
